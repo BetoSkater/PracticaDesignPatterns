@@ -16,6 +16,8 @@
 		D3824DDE29780AE5003F9A23 /* PracticaDesignPatternsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3824DDD29780AE5003F9A23 /* PracticaDesignPatternsTests.swift */; };
 		D3824DE829780AE5003F9A23 /* PracticaDesignPatternsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3824DE729780AE5003F9A23 /* PracticaDesignPatternsUITests.swift */; };
 		D3824DEA29780AE5003F9A23 /* PracticaDesignPatternsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3824DE929780AE5003F9A23 /* PracticaDesignPatternsUITestsLaunchTests.swift */; };
+		D3824DFE29780D02003F9A23 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3824DFD29780D02003F9A23 /* LogInViewController.swift */; };
+		D3824E0029780D13003F9A23 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3824DFF29780D13003F9A23 /* LogInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		D3824DE329780AE5003F9A23 /* PracticaDesignPatternsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PracticaDesignPatternsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3824DE729780AE5003F9A23 /* PracticaDesignPatternsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticaDesignPatternsUITests.swift; sourceTree = "<group>"; };
 		D3824DE929780AE5003F9A23 /* PracticaDesignPatternsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticaDesignPatternsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D3824DFD29780D02003F9A23 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		D3824DFF29780D13003F9A23 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +103,14 @@
 		D3824DC529780AE4003F9A23 /* PracticaDesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
-				D3824DC629780AE4003F9A23 /* AppDelegate.swift */,
-				D3824DC829780AE4003F9A23 /* SceneDelegate.swift */,
+				D3824DFB29780CA4003F9A23 /* App */,
+				D3824DFC29780CAC003F9A23 /* Base */,
+				D3824DF729780BCF003F9A23 /* MVVM */,
+				D3824DF829780BE0003F9A23 /* Login */,
+				D3824DF629780BA4003F9A23 /* VIPER */,
 				D3824DCA29780AE4003F9A23 /* ViewController.swift */,
 				D3824DCC29780AE4003F9A23 /* Main.storyboard */,
 				D3824DCF29780AE4003F9A23 /* Assets.xcassets */,
-				D3824DD129780AE4003F9A23 /* LaunchScreen.storyboard */,
 				D3824DD429780AE4003F9A23 /* Info.plist */,
 			);
 			path = PracticaDesignPatterns;
@@ -125,6 +131,62 @@
 				D3824DE929780AE5003F9A23 /* PracticaDesignPatternsUITestsLaunchTests.swift */,
 			);
 			path = PracticaDesignPatternsUITests;
+			sourceTree = "<group>";
+		};
+		D3824DF629780BA4003F9A23 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		D3824DF729780BCF003F9A23 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		D3824DF829780BE0003F9A23 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D3824DF929780BF7003F9A23 /* Controller */,
+				D3824DFA29780BFE003F9A23 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D3824DF929780BF7003F9A23 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D3824DFD29780D02003F9A23 /* LogInViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D3824DFA29780BFE003F9A23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3824DFF29780D13003F9A23 /* LogInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3824DFB29780CA4003F9A23 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D3824DC629780AE4003F9A23 /* AppDelegate.swift */,
+				D3824DC829780AE4003F9A23 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D3824DFC29780CAC003F9A23 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D3824DD129780AE4003F9A23 /* LaunchScreen.storyboard */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +320,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3824E0029780D13003F9A23 /* LogInView.swift in Sources */,
+				D3824DFE29780D02003F9A23 /* LogInViewController.swift in Sources */,
 				D3824DCB29780AE4003F9A23 /* ViewController.swift in Sources */,
 				D3824DC729780AE4003F9A23 /* AppDelegate.swift in Sources */,
 				D3824DC929780AE4003F9A23 /* SceneDelegate.swift in Sources */,
