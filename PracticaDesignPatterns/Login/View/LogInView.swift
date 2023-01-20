@@ -23,22 +23,25 @@ class LoginView: UIView{
     
     let emailField: UITextField = {
         let textField = UITextField()
+       
         textField.backgroundColor = .white
         textField.placeholder = "  e-mail"
-       //TODO: fix the placeholder so it has amrging and not blank spaces
-       // textField.isSecureTextEntry
+        textField.borderStyle = .roundedRect
         textField.layer.cornerRadius = 10
         textField.translatesAutoresizingMaskIntoConstraints = false
+       
         return textField
     }()
     
     let passField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .white
-        textField.placeholder = "  password"
+        textField.placeholder = "password"
         textField.isSecureTextEntry = true
+        textField.borderStyle = .roundedRect
         textField.layer.cornerRadius = 10
         textField.translatesAutoresizingMaskIntoConstraints = false
+        
         return textField
     }()
     
@@ -50,8 +53,8 @@ class LoginView: UIView{
         button.setTitle("Log in", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        return button
         
+        return button
     }()
     
     //MARK: - inits -
@@ -96,6 +99,4 @@ class LoginView: UIView{
             
         ])
     }
-    
-    
 }
