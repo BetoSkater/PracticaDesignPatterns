@@ -13,6 +13,7 @@ import Foundation
 
 protocol AnyInteractor{
     var presenter: AnyPresenter? {get set}
+    
     func tryLogin(with userData: LogInViperModel)
 }
 
@@ -26,13 +27,14 @@ class LoginInteractor: AnyInteractor{
                 //Save the token in userDefaults:
                 LocalData.shared.saveToken(token: token)
                 debugPrint("MSG: Inside viper api call, token value = \(token) ")
-                //TODO: Critical point
-                //¿Why does self? give problems?
+                
+                //TODO: ¿Why does self? give problems?
                 self.presenter?.interactorDidLogin(with: .success(true))
+                debugPrint("MSG: interatorDidLogin is true")
             }else{
                 self.presenter?.interactorDidLogin(with: .success(false))
+                debugPrint("MSG: interatorDidLogin is false")
             }
-            
         }
     }
 }

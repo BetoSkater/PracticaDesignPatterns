@@ -11,18 +11,18 @@ import UIKit
 //ViewController
 //Protocol
 //Reference to presenter
-
+//MARK: - AnyView protocol declaration -
 protocol AnyView{
     var presenter: AnyPresenter? {get set}
-    //TODO: igual estas dos funciones no van aqui, ya que no hay una actializxacion de los datos, pero en teoria aqui va el viewcontroller.
+    
     func authenticationSucceded()
     func authenticationFailed(with error: String)
 }
 
 class LoginViperViewController: UIViewController, AnyView{
-  
     
     var presenter: AnyPresenter?
+    
     //MARK: - SubViews declaration.-
     
     let baseView: UIImageView = {
@@ -37,18 +37,19 @@ class LoginViperViewController: UIViewController, AnyView{
     
     let emailField: UITextField = {
         let textField = UITextField()
-       
+        
         textField.backgroundColor = .white
         textField.placeholder = "  e-mail viper"
         textField.borderStyle = .roundedRect
         textField.layer.cornerRadius = 10
         textField.translatesAutoresizingMaskIntoConstraints = false
-       
+        
         return textField
     }()
     
     let passField: UITextField = {
         let textField = UITextField()
+        
         textField.backgroundColor = .white
         textField.placeholder = "password viper"
         textField.isSecureTextEntry = true
@@ -60,8 +61,8 @@ class LoginViperViewController: UIViewController, AnyView{
     }()
     
     let loginButton: UIButton = {
-        
         let button = UIButton()
+        
         button.backgroundColor = .white
         button.layer.cornerRadius = 150
         button.setTitle("Log in", for: .normal)
@@ -70,46 +71,38 @@ class LoginViperViewController: UIViewController, AnyView{
         
         return button
     }()
-    
+    //MARK: - viewDidLoad() -
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO: view color and addd subviews here
-        loadSubviewsAndConstrains()
-
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
+        loadSubviewsAndConstrains()
+        
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
-    //TODO: constrains?
-    
+    //MARK:  - ButtonAction -
     @objc func loginButtonTapped(sender: UIButton){
         debugPrint("MSG: viper login button does work")
         if let mail = emailField.text, let pass = passField.text{
             if !mail.isEmpty && !pass.isEmpty{
-                /*
-                let email = emailField.text
-                let pass = passField.text
-                */
                 
-                print("\(mail) and \(pass)")
                 let loginData = LogInViperModel(email: mail, password: pass)
-                LoginInteractor().tryLogin(with: loginData)
+                //TODO: I do not understand why the commented line did not work.
+                presenter?.interactor?.tryLogin(with: loginData)
+                //LoginInteractor().tryLogin(with: loginData)
             }else{
                 emailField.text = "Type user and password"
             }
         }
-        
-        
     }
-
+    //MARK: - loadSubviewsAndConstrains method. -
     func loadSubviewsAndConstrains(){
         view.addSubview(baseView)
         view.addSubview(emailField)
         view.addSubview(passField)
         view.addSubview(loginButton)
         
-        
         NSLayoutConstraint.activate([
-        
+            
             baseView.topAnchor.constraint(equalTo: view.topAnchor),
             baseView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             baseView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -129,10 +122,9 @@ class LoginViperViewController: UIViewController, AnyView{
             loginButton.leadingAnchor.constraint(equalTo: passField.leadingAnchor),
             loginButton.trailingAnchor.constraint(equalTo: passField.trailingAnchor),
             loginButton.heightAnchor.constraint(equalToConstant: 50),
-            
         ])
     }
-
+    //MARK: - protocol AnyView methods -
     func authenticationSucceded() {
         UIApplication.shared.connectedScenes.compactMap {($0 as? UIWindowScene)?.keyWindow}.first?.rootViewController = HeroesListViewController()
     }
