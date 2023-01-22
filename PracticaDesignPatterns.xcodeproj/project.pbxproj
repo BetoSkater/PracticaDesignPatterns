@@ -25,6 +25,11 @@
 		D386BD3929796727009B9E6C /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386BD3829796727009B9E6C /* LocalData.swift */; };
 		D386BD3E29796F4E009B9E6C /* HeroesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386BD3D29796F4E009B9E6C /* HeroesListView.swift */; };
 		D386BD40297970E0009B9E6C /* HeroesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386BD3F297970E0009B9E6C /* HeroesListViewController.swift */; };
+		D390FB0D297AACF7003AF22F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390FB0C297AACF7003AF22F /* View.swift */; };
+		D390FB0F297AAD09003AF22F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390FB0E297AAD09003AF22F /* Interactor.swift */; };
+		D390FB11297AAD16003AF22F /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390FB10297AAD16003AF22F /* Presenter.swift */; };
+		D390FB13297AAD34003AF22F /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390FB12297AAD34003AF22F /* Entity.swift */; };
+		D390FB15297AAD40003AF22F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390FB14297AAD40003AF22F /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +72,11 @@
 		D386BD3829796727009B9E6C /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
 		D386BD3D29796F4E009B9E6C /* HeroesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListView.swift; sourceTree = "<group>"; };
 		D386BD3F297970E0009B9E6C /* HeroesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewController.swift; sourceTree = "<group>"; };
+		D390FB0C297AACF7003AF22F /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		D390FB0E297AAD09003AF22F /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		D390FB10297AAD16003AF22F /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		D390FB12297AAD34003AF22F /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		D390FB14297AAD40003AF22F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +180,11 @@
 		D3824DF629780BA4003F9A23 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				D390FB0C297AACF7003AF22F /* View.swift */,
+				D390FB0E297AAD09003AF22F /* Interactor.swift */,
+				D390FB10297AAD16003AF22F /* Presenter.swift */,
+				D390FB12297AAD34003AF22F /* Entity.swift */,
+				D390FB14297AAD40003AF22F /* Router.swift */,
 			);
 			path = VIPER;
 			sourceTree = "<group>";
@@ -381,17 +396,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D390FB0D297AACF7003AF22F /* View.swift in Sources */,
 				D3824E0029780D13003F9A23 /* LogInView.swift in Sources */,
 				D386BD3929796727009B9E6C /* LocalData.swift in Sources */,
 				D3824DFE29780D02003F9A23 /* LogInViewController.swift in Sources */,
+				D390FB13297AAD34003AF22F /* Entity.swift in Sources */,
 				D3824DCB29780AE4003F9A23 /* ViewController.swift in Sources */,
 				D37FDE062978480E0094DD43 /* Networking.swift in Sources */,
 				D3824DC729780AE4003F9A23 /* AppDelegate.swift in Sources */,
 				D386BD3E29796F4E009B9E6C /* HeroesListView.swift in Sources */,
 				D37FDE042978463D0094DD43 /* LogInModel.swift in Sources */,
+				D390FB15297AAD40003AF22F /* Router.swift in Sources */,
+				D390FB11297AAD16003AF22F /* Presenter.swift in Sources */,
 				D37FDE01297845490094DD43 /* LogInViewModel.swift in Sources */,
 				D3824DC929780AE4003F9A23 /* SceneDelegate.swift in Sources */,
 				D386BD40297970E0009B9E6C /* HeroesListViewController.swift in Sources */,
+				D390FB0F297AAD09003AF22F /* Interactor.swift in Sources */,
 				D37FDE0929784A760094DD43 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
