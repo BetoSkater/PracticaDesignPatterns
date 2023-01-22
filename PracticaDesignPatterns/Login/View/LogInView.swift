@@ -25,7 +25,7 @@ class LoginView: UIView{
         let textField = UITextField()
        
         textField.backgroundColor = .white
-        textField.placeholder = "  e-mail"
+        textField.placeholder = "e-mail in MVVM"
         textField.borderStyle = .roundedRect
         textField.layer.cornerRadius = 10
         textField.translatesAutoresizingMaskIntoConstraints = false

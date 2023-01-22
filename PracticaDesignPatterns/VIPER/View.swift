@@ -39,7 +39,7 @@ class LoginViperViewController: UIViewController, AnyView{
         let textField = UITextField()
         
         textField.backgroundColor = .white
-        textField.placeholder = "  e-mail viper"
+        textField.placeholder = "e-mail viper"
         textField.borderStyle = .roundedRect
         textField.layer.cornerRadius = 10
         textField.translatesAutoresizingMaskIntoConstraints = false

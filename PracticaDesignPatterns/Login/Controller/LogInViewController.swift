@@ -30,6 +30,7 @@ class LoginViewController: UIViewController{
         view = LoginView()
     }
     
+    //MARK: - Button related methods -
     @objc func loginButtonTapped(sender: UIButton!){
         getLogIn()
         setUpLoginTransitionSuccessfull()
@@ -48,16 +49,16 @@ class LoginViewController: UIViewController{
     }
     func setUpLoginTransitionSuccessfull(){
         debugPrint("MSG: start of setupLoginTransition")
-       // DispatchQueue.main.async {
-            self.viewModel?.loginTransitionSuccessfull = { userLogged in
-                let heroListViewController = HeroesListViewController()
-                print("MSG: before the screen chsnge")
-                //TODO: do not delete
-               // self.present(heroListViewController, animated: true) //It does work but is not a full window
-               // self.navigationController?.pushViewController(heroListViewController, animated: true) //This does not work
-                
-                UIApplication.shared.connectedScenes.compactMap {($0 as? UIWindowScene)?.keyWindow}.first?.rootViewController = HeroesListViewController() //TODO: este funciona justo como quiero.
-            }
-       // } //DispatchQueue
+        // DispatchQueue.main.async {
+        self.viewModel?.loginTransitionSuccessfull = { userLogged in
+            let heroListViewController = HeroesListViewController()
+            print("MSG: before the screen chsnge")
+            //TODO: do not delete
+            // self.present(heroListViewController, animated: true) //It does work but is not a full window
+            // self.navigationController?.pushViewController(heroListViewController, animated: true) //This does not work
+            
+            UIApplication.shared.connectedScenes.compactMap {($0 as? UIWindowScene)?.keyWindow}.first?.rootViewController = HeroesListViewController() //TODO: este funciona justo como quiero.
+        }
+        // } //DispatchQueue
     }
 }

@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         //TODO: Remove comment to launch the viper login
-        
+        /*
         let logInEntry = LoginRouter.start()
         
         let firstVC = logInEntry.entry
@@ -29,8 +29,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = window
         window.makeKeyAndVisible()
-        
-        
+        */
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

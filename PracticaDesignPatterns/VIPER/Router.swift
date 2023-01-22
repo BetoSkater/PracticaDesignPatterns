@@ -13,11 +13,13 @@ import UIKit
 
 typealias EntryPoint = AnyView & UIViewController
 
+//MARK: - protocol AnyRouter -
 protocol AnyRouter{
     var entry: EntryPoint? {get}
     static func start() -> AnyRouter
 }
 
+//MARK: - Class LoginRouter -
 class LoginRouter: AnyRouter{
     var entry: EntryPoint?
     
@@ -42,6 +44,5 @@ class LoginRouter: AnyRouter{
         router.entry = view as? EntryPoint
         
         return router
-        
     }
 }

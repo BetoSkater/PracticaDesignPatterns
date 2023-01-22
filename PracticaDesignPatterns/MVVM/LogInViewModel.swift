@@ -8,7 +8,7 @@
 import Foundation
 
 class LogInViewModel: NSObject{
-   
+    
     override init() {
     }
     

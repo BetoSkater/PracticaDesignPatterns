@@ -10,13 +10,13 @@ import Foundation
 //Protocol
 //Reference to presenter
 //ApiCalls
-
+//MARK: - protocol AnyInteractor -
 protocol AnyInteractor{
     var presenter: AnyPresenter? {get set}
     
     func tryLogin(with userData: LogInViperModel)
 }
-
+//MARK: - Class LoginInteractor -
 class LoginInteractor: AnyInteractor{
     
     var presenter: AnyPresenter?

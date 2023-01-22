@@ -12,7 +12,6 @@ class HeroesListViewController: UIViewController{
     
     var mainView: HeroesListView{self.view as! HeroesListView}
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

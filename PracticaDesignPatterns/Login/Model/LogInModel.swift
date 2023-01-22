@@ -3,7 +3,7 @@
 //  PracticaDesignPatterns
 //
 //  Created by Alberto Junquera Ramírez on 18/1/23.
-//
+// 
 
 import Foundation
 //TODO: check if codable is needed

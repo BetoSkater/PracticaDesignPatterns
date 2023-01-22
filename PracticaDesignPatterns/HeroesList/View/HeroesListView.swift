@@ -11,12 +11,14 @@ import UIKit
 class HeroesListView: UIView{
     
     let textLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
+        
         label.text = "LogIn was successfull"
         label.textColor = .black
         label.textAlignment = .center
         label.backgroundColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
     }()
     
@@ -39,7 +41,6 @@ class HeroesListView: UIView{
             textLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 50),
             textLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
             textLabel.heightAnchor.constraint(equalToConstant: 50),
-        
         ])
     }
 }

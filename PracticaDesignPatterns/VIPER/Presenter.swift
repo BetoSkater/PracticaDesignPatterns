@@ -9,7 +9,7 @@ import Foundation
 //Object
 //Protocol
 //Reference Iterator, router and view
-
+//MARK: -protocol AnyPresenter-
 protocol AnyPresenter{
     var router: AnyRouter? {get set}
     var interactor: AnyInteractor? {get set}
@@ -17,27 +17,26 @@ protocol AnyPresenter{
     
     func interactorDidLogin(with result: Result<Bool,Error>)
 }
-
+//MARK: - Class LoginPresenter -
 class LoginPresenter: AnyPresenter{
-        
+    
     var router: AnyRouter?
     var interactor: AnyInteractor?
     var view: AnyView?
     
     //RESULT<nil, Error>???
     func interactorDidLogin(with result: Result<Bool, Error>) {
-        debugPrint("Llega a la funcion interactorDidLogin")
+        debugPrint("MSG: starting interactorDidLogin func")
         switch result{
         case .success(true):
-            debugPrint("LoginSucceded")
+            debugPrint("MSG: LoginSucceded")
             DispatchQueue.main.async {
                 self.view?.authenticationSucceded()
             }
         case .failure(let error):
-            debugPrint("Login Failure")
-            //TODO: hace falta poner lo del error?
+            debugPrint("MSG: Login Failure: \(error)")
         case .success(false):
-            debugPrint("Login failure")
+            debugPrint("MSG: Login failure")
         }
     }
 }

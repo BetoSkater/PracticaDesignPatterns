@@ -19,7 +19,7 @@ final class Networking{
     
     static let shared = Networking()
     
-    //MARK: -LogIn-
+    //MARK: -LogIn MVVM-
     
     func login(userModel: LogInModel, completion: @escaping (String?, Error?) -> Void){
         //URL generation:
@@ -47,7 +47,7 @@ final class Networking{
                 completion(nil, NetworkError.noData)
                 return
             }
-        
+            
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {
                 let statusCode = (response as? HTTPURLResponse)?.statusCode
                 completion(nil, NetworkError.statusCode(code: statusCode))
@@ -92,7 +92,7 @@ final class Networking{
                 completion(nil, NetworkError.noData)
                 return
             }
-        
+            
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {
                 let statusCode = (response as? HTTPURLResponse)?.statusCode
                 completion(nil, NetworkError.statusCode(code: statusCode))
